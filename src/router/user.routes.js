@@ -4,7 +4,7 @@ const router = require("express").Router();
 
 // Registration route
 // 
-app.post("/createuser", function (req, res, next) {
+router.post("/createuser", function (req, res, next) {
   var user = new User(); // TypeError: User is not a constructor
   User.name = req.body.name;
   User.password = req.body.password;

@@ -5,7 +5,7 @@ const bodyParser=require("body-parser")
 const session = require("express-session");
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/user_autentica")
+mongoose.connect("mongodb://localhost:27017/userautentication")
     .then(() => {
         console.log("Database Connected Successfully");
     }).catch((error) => {
