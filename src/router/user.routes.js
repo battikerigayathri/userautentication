@@ -1,15 +1,14 @@
+const passport=require("passport")
 var User = require("../controllers/user.controller");
-const passport = require(`passport`);
 const router = require("express").Router();
 
 // Registration route
-// 
-router.post("/createuser", function (req, res, next) {
-  var user = new User(); // TypeError: User is not a constructor
+router.post("/signup", function (req, res, next) {
+  var newUser = new User; // TypeError: User is not a constructor
   User.name = req.body.name;
   User.password = req.body.password;
 
-  user.save((err) => {
+  newUser.save((err) => {
     if (err) {
       console.error(err);
       res.status(500).json({ message: "Error registering user" });

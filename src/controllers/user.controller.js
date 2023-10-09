@@ -1,5 +1,5 @@
-const User = require('../models/user.model');
 const passport = require('passport');
+const User = require('../models/user.model');
 const LocalStrategy = require('passport-local').Strategy;
 
 passport.use(
@@ -17,7 +17,6 @@ passport.use(
     });
   })
 );
-
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
